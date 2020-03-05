@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sh checkArgs $0 $1
+
+if [ ! $? -eq 0 ]; then
+  exit 1
+fi
+
+echo -e "\n\e[34mRUNNING KERNEL\n\e[0m"
+
+#Run the kernel
+cd ~/ece344/build
+cp /cad2/ece344s/tester/sysconfig/sys161-${1,,}.conf sys161.conf
+sys161 kernel

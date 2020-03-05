@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sh checkArgs $0 $1
+
+if [ ! $? -eq 0 ]; then
+  exit 1
+fi
+
+sh buildOS $1
+
+if [ ! $? -eq 0 ]; then
+  echo -e "\n\e[31mEXITING\e[0m"
+  exit 1
+fi
+
+sh runOS $1

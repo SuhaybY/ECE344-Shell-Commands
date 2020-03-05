@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo -e "\n\e[91mSuhayb's ECE344 Commands\n\e[0m"
+
+echo -e "\e[34mBuild the OS:\e[0m"
+echo -e "\e[90mbuildOS\e[0m \e[36m<Assignment #>\e[0m"
+echo -e "Eg: \e[90mbuildOS \e[36mASST1\e[0m, to build Assignment 1"
+
+echo -e "\n\e[34mRun the Kernel:\e[0m"
+echo -e "\e[90mrunOS\e[0m \e[36m<Assignment #>\e[0m"
+echo -e "Eg: \e[90mrunOS\e[0m \e[36mASST1\e[0m, to run Assignment 1"
+
+echo -e "\n\e[34mBuild & run the OS:\e[0m"
+echo -e "\e[90mbuildRunOS\e[0m \e[36m<Assignment #>\e[0m"
+echo -e "Eg: \e[90mbuildRunOS\e[0m \e[36mASST1\e[0m, to build and run Assignment 1"
+
+echo -e "\n\e[34mDebug the OS:\e[0m"
+echo -e "\e[90mdebugOS\e[0m \e[36m<kern/gdb>\e[0m"
+echo -e "Eg: \e[90mdebugOS\e[0m \e[36mkern\e[0m, to run the kernel"
+echo -e "Eg: \e[90mdebugOS\e[0m \e[36mgdb\e[0m, to run the gdb\n"
+
+echo -e "\n\e[34mCheck Submission:\e[0m"
+echo -e "\e[90mcheckSubmitOS\e[0m \e[36m<Assignment #>\e[0m"
+echo -e "Eg: \e[90mcheckSubmitOS\e[0m \e[36m1\e[0m, to simulate the tester on Assignment 1"
+
+

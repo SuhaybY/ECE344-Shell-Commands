@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Check if argument(s) is supplied:
+if [ $# -eq 0 ]; then 
+  echo "No arguments supplied!"
+  echo -e "Format: \e[90mdebugOS\e[0m \e[36m<kern/gdb>\e[0m"
+  echo -e "Eg: \e[90mdebugOS\e[0m \e[36mkern\e[0m"
+  exit 1
+fi
+
+#Check if kernel/gdb
+if [ $1 = "kern" ]; then
+  cd ~/ece344/build
+  sys161 -w kernel
+elif [ $1 = "gdb" ]; then
+  echo -e "\n\e[34mRemember to enter 'db' to attach the debugger!\n\e[0m"
+  cd ~/ece344/build
+  cs161-gdb kernel
+else
+  echo "Invalid argument!"
+  echo -e "Format: \e[90mdebugOS\e[0m \e[36m<kern/gdb>\e[0m"
+  echo -e "Eg: \e[90mdebugOS\e[0m \e[36mkern\e[0m"
+fi
+
+

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sh checkArgs $0 $1
+
+if [ ! $? -eq 0 ]; then
+  exit 1
+fi
+
+#Building the kernel
+cd ~/ece344/os161
+./configure --werror --ostree=$HOME/ece344/build
+make
+cd ~/ece344/os161
+cd kern/conf
+./config $1
+cd ~/ece344/os161/kern
+cd compile/$1
+make depend
+
+#Check if build succeeds
+#make || exit 1 #By means of shortcircuiting the expression
+make
+if [ ! $? -eq 0 ]; then
+  echo -e "\n\e[31mBUILD FAILED\e[0m"
+  exit 1
+fi
+
+make install
+
+echo -e "\n\e[34mBUILD COMPLETED\e[0m"
+exit 0

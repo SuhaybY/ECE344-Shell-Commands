@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Check if argument(s) is supplied:
+if [ $# -eq 1 ]; then 
+  echo "No arguments supplied!"
+  echo -e "Format: \e[90m$(basename $1)\e[0m \e[36m<Assignment #>\e[0m"
+  echo -e "Eg: \e[90m$(basename $1)\e[0m \e[36mASST1\e[0m"
+  exit 1
+fi
+
+#Check for a valid argument
+if [ ! $2 = "ASST1" ] && [ ! $2 = "ASST2" ] && [ ! $2 = "ASST3" ] && [ ! $2 = "ASST4" ]; then
+  echo "Invalid argument!"
+  echo -e "Format: \e[90m$(basename $1)\e[0m \e[36m<Assignment #>\e[0m"
+  echo -e "Eg: \e[90m$(basename $1)\e[0m \e[36mASST1\e[0m"
+  exit 1
+fi
+
+exit 0
