@@ -11,6 +11,8 @@ set path = ( ~/bin $path)
 ```
 4. Logout and login once more.
 5. Test that the shell commands work. Open a terminal and enter `suhayb344`.
+   * If you encounter an permissions denied error, give yourself execution rights by the following:
+   `chmod -R 700 bin`
 6. This should display an output of all the available shell commands, and how to use them. 
 7. Open VSCode and create a new build task:
    1. Click 'Configure Tasks...' from the 'Terminal' menu.
