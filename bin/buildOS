@@ -21,7 +21,7 @@ make depend
 #make || exit 1 #By means of shortcircuiting the expression
 make
 if [ ! $? -eq 0 ]; then
-  echo -e "\n\e[31mBUILD FAILED\e[0m"
+  echo -e "\n\e[31m$1 BUILD FAILED\e[0m"
   exit 1
 fi
 
