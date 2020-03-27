@@ -6,26 +6,35 @@ if [ ! $? -eq 0 ]; then
   exit 1
 fi
 
-#Building the kernel
+#Configuring the tree
 cd ~/ece344/os161
 ./configure --werror --ostree=$HOME/ece344/build
+
+#Build + Install user utilities
 make
+if [ ! $? -eq 0 ]; then
+  echo -e "\n\e[31mBUILD FAILED\e[0m"
+  exit 1
+fi
+
+#Configuring the kernel
 cd ~/ece344/os161
 cd kern/conf
 ./config $1
+
+#Build + Install the kernel
 cd ~/ece344/os161/kern
 cd compile/$1
 make depend
 
 #Check if build succeeds
-#make || exit 1 #By means of shortcircuiting the expression
 make
 if [ ! $? -eq 0 ]; then
-  echo -e "\n\e[31m$1 BUILD FAILED\e[0m"
+  echo -e "\n\e[31mBUILD FAILED\e[0m"
   exit 1
 fi
 
 make install
 
-echo -e "\n\e[34mBUILD COMPLETED\e[0m"
+echo -e "\n\e[34m$1 BUILD COMPLETED\e[0m"
 exit 0
